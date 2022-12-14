@@ -46,6 +46,27 @@
 
 	<build>
 		<plugins>
+		    <plugin>
+    			<groupId>com.microsoft.azure</groupId>
+    				<artifactId>azure-webapp-maven-plugin</artifactId>
+    				<version>2.7.0</version>
+    <configuration>
+      <subscriptionId>1c09cc15-a3c9-4c53-98ce-57d67c90b1b6</subscriptionId>
+      <resourceGroup>rg-cw2212-spoke1</resourceGroup>
+      <appName>app-cw2212-spoke1</appName>
+      <deployment>
+      <resources>
+        <resource>
+        <type>jar</type>
+        <directory>${project.basedir}/target</directory>
+        <includes>
+          <include>*.jar</include>
+        </includes>
+        </resource>
+      </resources>
+      </deployment>
+    </configuration>
+   </plugin>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
